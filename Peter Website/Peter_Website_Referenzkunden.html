@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Referenzkunden - Steinmetz Lutz | Innsbruck, Tirol | Salzburg | Wien</title>
+  <meta name="description" content="Unsere Kunden sind der Beweis. Referenzkunden von Steinmetz Lutz in Innsbruck, Tirol, Salzburg und Wien.">
+  <meta name="title" content="Referenzkunden - Steinmetz Lutz | Innsbruck, Tirol | Salzburg | Wien">
+  <link rel="canonical" href="http://www.lutz-stein.at/referenzkunden.html">
+  <style>
+    :root {
+      --bg: #f7f6f4;
+      --surface: #ffffff;
+      --text: #1f2428;
+      --muted: #6e7275;
+      --accent: #b38b4d;
+      --border: #ded9d1;
+      --radius: 24px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background: var(--surface);
+      box-shadow: 0 1px 16px rgba(31, 36, 40, 0.08);
+    }
+
+    .header-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0.85rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand img {
+      width: 120px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .site-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .primary-nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .primary-nav a {
+      padding: 0.75rem 1rem;
+      border-radius: 999px;
+      transition: background 0.25s, color 0.25s;
+    }
+
+    .primary-nav a:hover,
+    .primary-nav a:focus {
+      background: rgba(179, 139, 77, 0.12);
+      color: var(--accent);
+    }
+
+    .primary-nav .active {
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .main-content {
+      max-width: 920px;
+      margin: 1.1rem auto;
+      padding: 0 0.85rem;
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr) 220px;
+      gap: 1rem;
+    }
+
+    .sidebar,
+    .hero-panel,
+    .content-card,
+    .info-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .sidebar {
+      padding: 1rem;
+      position: sticky;
+      top: 1.25rem;
+      align-self: start;
+    }
+
+    .sidebar h2 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .sidebar nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 0.9rem 1rem;
+      border-radius: 18px;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .sidebar a:hover,
+    .sidebar a:focus {
+      background: rgba(179, 139, 77, 0.12);
+      transform: translateX(2px);
+    }
+
+    .sidebar a.active {
+      background: rgba(179, 139, 77, 0.16);
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .content-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .hero-panel {
+      padding: 1.5rem;
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .hero-panel h1 {
+      margin: 0;
+      font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+      letter-spacing: -0.03em;
+    }
+
+    .hero-panel p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 700px;
+    }
+
+    .content-card {
+      padding: 1.25rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .content-card h2 {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .reference-list {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .reference-list li {
+      margin: 0;
+      color: var(--text);
+      padding: 0.4rem 0;
+      border-bottom: 1px solid rgba(222, 217, 209, 0.8);
+    }
+
+    .reference-list li:last-child {
+      border-bottom: none;
+    }
+
+    .hero-image {
+      border-radius: 22px;
+      overflow: hidden;
+      max-height: 340px;
+    }
+
+    .aside-right {
+      display: grid;
+      gap: 1.5rem;
+      align-self: start;
+    }
+
+    .info-card {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: center;
+      min-height: auto;
+    }
+
+    .info-card p {
+      margin: 0.35rem 0;
+    }
+
+    .footer {
+      margin-top: 2rem;
+      padding: 1rem 1.25rem 2rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    @media (max-width: 1024px) {
+      .main-content {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: relative;
+        top: 0;
+      }
+
+      .reference-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .primary-nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="header-inner">
+        <div class="brand">
+          <img src="Steinmetz_Lutz_Logo.jpg" alt="Steinmetz Lutz">
+          <span class="site-title">Steinmetz Lutz</span>
+        </div>
+        <nav class="primary-nav" aria-label="Hauptnavigation">
+          <ul>
+            <li><a href="Peter_Website_Home1.html">Home</a></li>
+            <li><a href="Peter_Website_Kataloge.html">Kataloge</a></li>
+            <li><a href="Peter_Website_Neuheiten.html">Neuheiten</a></li>
+            <li><a href="Peter_Website_Standorte.html">Standorte</a></li>
+            <li><a href="Peter_Website_Kontakt.html">Kontakt</a></li>
+            <li><a href="Peter_Website_Jobs.html">Jobs</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="main-content">
+      <aside class="sidebar" aria-label="Unterseiten">
+        <h2>Bereiche</h2>
+        <nav>
+          <ul>
+            <li><a href="Peter_Website_Home1.html">Home</a></li>
+            <li><a href="Peter_Website_UeberUns.html">Über uns</a></li>
+            <li><a href="Peter_Website_Friedhof.html">Friedhof / Grab</a></li>
+            <li><a href="Peter_Website_Bau.html">Bau</a></li>
+            <li><a href="Peter_Website_Bildgalerie.html">Bildgalerie</a></li>
+            <li><a href="Peter_Website_AngebotAnfordern.html">Angebot anfordern</a></li>
+            <li><a href="Peter_Website_Referenzkunden.html" class="active">Referenzkunden</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <section class="content-panel">
+        <article class="hero-panel">
+          <h1>Referenzkunden</h1>
+          <p>Unsere Kunden sind der Beweis. Hier finden Sie eine Auswahl unserer Referenzen aus Innsbruck, Tirol, Salzburg und Wien.</p>
+        </article>
+        <section class="content-card">
+          <div class="hero-image">
+            <img src="Bau.png" alt="Referenzkunden">
+          </div>
+          <h2>Ausgewählte Referenzen</h2>
+          <ul class="reference-list">
+            <li>Einfamilienhaus Gerber</li>
+            <li>Raiffeisenbank St. Gallen</li>
+            <li>Gemeinde Rietz</li>
+            <li>Hotel Jungbrunn, Tannheim</li>
+            <li>Inntalcenter, Telfs</li>
+            <li>Hotel Edelweiß, Lermoos</li>
+            <li>Pfarre Zams</li>
+            <li>Kinderhotel Alpenrose, Lermoos</li>
+            <li>Friedhof Mötz</li>
+            <li>Sparkasse Jungholz</li>
+          </ul>
+        </section>
+      </section>
+      <aside class="aside-right">
+        <div class="info-card">
+          <p><strong>Steinmetz Lutz</strong></p>
+          <p>Telefon 0676 / 310 1989</p>
+          <p><a href="mailto:info@lutz-stein.at">info@lutz-stein.at</a></p>
+          <p>www.lutz-stein.at</p>
+        </div>
+      </aside>
+    </main>
+    <footer class="footer">
+      <ul class="footer-links">
+        <li><a href="index.php?id=15">Links</a></li>
+        <li><a href="index.php?id=14">Impressum</a></li>
+      </ul>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kataloge - Steinmetz Lutz | Innsbruck, Tirol | Salzburg | Wien</title>
+  <meta name="description" content="Grabsteine Steinmetz Lutz - Ihr Steinmetz in Innsbruck, Tirol, Salzburg und Wien - Gravuren, Grabgestaltung, Grabmal, Steinmetzarbeiten uvm.">
+  <meta name="title" content="Kataloge - Steinmetz Lutz | Innsbruck, Tirol | Salzburg | Wien">
+  <link rel="canonical" href="http://www.lutz-stein.at/kataloge.html">
+  <style>
+    :root {
+      --bg: #f7f6f4;
+      --surface: #ffffff;
+      --text: #1f2428;
+      --muted: #6e7275;
+      --accent: #b38b4d;
+      --border: #ded9d1;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+      border: none;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background: var(--surface);
+      box-shadow: 0 1px 16px rgba(31, 36, 40, 0.08);
+    }
+
+    .header-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0.85rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand img {
+      width: 120px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .site-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .primary-nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .primary-nav a {
+      padding: 0.75rem 1rem;
+      border-radius: 999px;
+      transition: background 0.25s, color 0.25s;
+    }
+
+    .primary-nav a:hover,
+    .primary-nav a:focus {
+      background: rgba(179, 139, 77, 0.12);
+      color: var(--accent);
+    }
+
+    .primary-nav .active {
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .main-content {
+      max-width: 920px;
+      margin: 1.1rem auto;
+      padding: 0 0.85rem;
+      display: grid;
+      /* rechte Spalte schmaler: 220px -> 170px */
+      grid-template-columns: 220px minmax(0, 1fr) 170px;
+      gap: 1rem;
+    }
+
+    .sidebar,
+    .catalog-card,
+    .catalog-grid,
+    .quick-links,
+    .info-card,
+    .hero-panel,
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+    }
+
+    .sidebar {
+      padding: 1rem;
+      position: sticky;
+      top: 1.25rem;
+      align-self: start;
+    }
+
+    .sidebar h2 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .sidebar nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 0.9rem 1rem;
+      border-radius: 18px;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .sidebar a:hover,
+    .sidebar a:focus {
+      background: rgba(179, 139, 77, 0.12);
+      transform: translateX(2px);
+    }
+
+    .sidebar a.active {
+      background: rgba(179, 139, 77, 0.16);
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .content-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .hero-panel {
+      padding: 1.5rem;
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .hero-panel h1 {
+      margin: 0;
+      font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+      letter-spacing: -0.03em;
+    }
+
+    .hero-panel p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 700px;
+    }
+
+    .catalog-content {
+      padding: 1.25rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .catalog-intro {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .catalog-grid {
+      display: grid;
+      gap: 0.85rem;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      padding: 1rem;
+    }
+
+    .catalog-card {
+      padding: 0.85rem;
+      border-radius: 18px;
+      overflow: hidden;
+      display: grid;
+      gap: 0.65rem;
+      align-items: start;
+    }
+
+    .catalog-card img {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 14px;
+    }
+
+    .catalog-card p {
+      margin: 0;
+      font-weight: 700;
+      color: var(--text);
+      font-size: 0.98rem;
+    }
+
+    .catalog-card a {
+      color: inherit;
+    }
+
+    .catalog-card:hover,
+    .catalog-card:focus-within {
+      box-shadow: 0 12px 30px rgba(31, 36, 40, 0.08);
+      transform: translateY(-1px);
+      transition: transform 0.2s ease;
+    }
+
+    .aside-right {
+      display: grid;
+      gap: 1.5rem;
+      align-content: start;        /* Kästchen nur so hoch wie sein Inhalt */
+    }
+
+    .quick-links {
+      padding: 1rem;
+    }
+
+    .quick-links h2 {
+      margin-top: 0;
+      margin-bottom: 0.85rem;
+      font-size: 1rem;
+    }
+
+    .link-grid {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .link-grid a {
+      display: block;
+      padding: 0.9rem 0.95rem;
+      border-radius: 18px;
+      background: rgba(179, 139, 77, 0.06);
+      transition: background 0.2s;
+    }
+
+    .link-grid a:hover,
+    .link-grid a:focus {
+      background: rgba(179, 139, 77, 0.14);
+    }
+
+    /* Service-Telefon: kompakteres Kästchen */
+    .info-card {
+      padding: 0.7rem 0.85rem;
+      border-radius: 18px;
+      font-size: 0.85rem;
+      line-height: 1.45;
+      overflow-wrap: anywhere;
+    }
+
+    .info-card h2 {
+      margin-top: 0;
+      margin-bottom: 0.4rem;
+      font-size: 0.9rem;
+    }
+
+    .info-card p {
+      margin: 0.2rem 0;
+    }
+
+    .footer {
+      margin-top: 2rem;
+      padding: 1rem 1.25rem 2rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    @media (max-width: 1024px) {
+      .main-content {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: relative;
+        top: 0;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .primary-nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+      }
+
+      .catalog-card img {
+        height: 140px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="header-inner">
+        <div class="brand">
+          <img src="Steinmetz_Lutz_Logo.jpg" alt="Steinmetz Lutz">
+          <span class="site-title">Steinmetz Lutz</span>
+        </div>
+        <nav class="primary-nav" aria-label="Hauptnavigation">
+          <ul>
+            <li><a href="Peter_Website_Home1.html">Home</a></li>
+            <li><a href="Peter_Website_Kataloge.html" class="active">Kataloge</a></li>
+            <li><a href="Peter_Website_Neuheiten.html">Neuheiten</a></li>
+            <li><a href="Peter_Website_Standorte.html">Standorte</a></li>
+            <li><a href="Peter_Website_Kontakt.html">Kontakt</a></li>
+            <li><a href="Peter_Website_Jobs.html">Jobs</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="main-content">
+      <aside class="sidebar" aria-label="Unterseiten">
+        <h2>Bereiche</h2>
+        <nav>
+          <ul>
+            <li><a href="Peter_Website_Home1.html">Home</a></li>
+            <li><a href="Peter_Website_Über-uns.html">Über uns</a></li>
+            <li><a href="Peter_Website_Friedhof.html">Friedhof / Grab</a></li>
+            <li><a href="Peter_Website_Bau.html">Bau</a></li>
+            <li><a href="Peter_Website_Bildgalerie.html">Bildgalerie</a></li>
+            <li><a href="Peter_Website_Angebot-anfordern.html">Angebot anfordern</a></li>
+            <li><a href="Peter_Website_Referenzkunden.html">Referenzkunden</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <section class="content-panel">
+        <article class="hero-panel">
+          <h1>Kataloge</h1>
+          <p class="catalog-intro">Bei Interesse klicken Sie einen Katalog an und laden ihn kostenlos herunter. Unsere Auswahl umfasst klassisch gefertigte Grabsteine, Kreuze und ergänzende Accessoires.</p>
+        </article>
+        <section class="catalog-content">
+          <div class="catalog-grid">
+            <a class="catalog-card" href="https://dl.dropbox.com/s/r78npmk4giu5qjg/01_Grabsteine%201.pdf" target="_blank">
+              <img src="Catalog_item1.png" alt="Grabsteine 1">
+              <p>Grabsteine 1</p>
+            </a>
+            <a class="catalog-card" href="https://dl.dropbox.com/s/2gklb8bok5z3fd0/02_Grabsteine%202.pdf" target="_blank">
+              <img src="Catalog_item2.png" alt="Grabsteine 2">
+              <p>Grabsteine 2</p>
+            </a>
+            <a class="catalog-card" href="https://dl.dropbox.com/s/nsu7gdlzdpz8wnv/03_Grabsteine%203.pdf" target="_blank">
+              <img src="Catalog_item3.png" alt="Grabsteine 3">
+              <p>Grabsteine 3</p>
+            </a>
+            <a class="catalog-card" href="https://dl.dropbox.com/s/akewcwmk9gxg3qz/04_Grabsteine%204.pdf" target="_blank">
+              <img src="Catalog_item4.png" alt="Grabsteine 4">
+              <p>Grabsteine 4</p>
+            </a>
+            <a class="catalog-card" href="https://dl.dropbox.com/s/2iz01vyxmd6zqjc/05_Grabsteine%205.pdf" target="_blank">
+              <img src="Catalog_Item5.png" alt="Grabsteine 5">
+              <p>Grabsteine 5</p>
+            </a>
+            <a class="catalog-card" href="https://dl.dropbox.com/s/0nf3yj3f7jmnse6/06_Grabsteine%206.pdf" target="_blank">
+              <img src="Catalog_item6.png" alt="Grabsteine 6">
+              <p>Grabsteine 6</p>
+            </a>
+            <a class="catalog-card" href="https://dl.dropbox.com/s/0rs20m50p2vck6h/07_Grabsteine%20exklusiv.pdf" target="_blank">
+              <img src="Catalog_item7.png" alt="Grabsteine exklusiv">
+              <p>Grabsteine exklusiv</p>
+            </a>
+            <a class="catalog-card" href="https://dl.dropbox.com/s/d7gss80r37y4r23/08_Grabsteine%20modern.pdf" target="_blank">
+              <img src="Catalog_item8.png" alt="Grabsteine modern">
+              <p>Grabsteine modern</p>
+            </a>
+            <a class="catalog-card" href="https://dl.dropbox.com/s/j58a9w73otmx6lt/09_Grabsteine%20stilvoll.pdf" target="_blank">
+              <img src="Catalog_item9.png" alt="Grabsteine stilvoll">
+              <p>Grabsteine stilvoll</p>
+            </a>
+            <a class="catalog-card" href="https://dl.dropbox.com/s/rct823hao1lxpt2/10_Grabkreuze%201.pdf" target="_blank">
+              <img src="Catalog_Item10.png" alt="Grabkreuze 1">
+              <p>Grabkreuze 1</p>
+            </a>
+            <a class="catalog-card" href="https://dl.dropbox.com/s/hfl4n7vp4hlqfr9/11_Grabkreuze%202.pdf" target="_blank">
+              <img src="Catalog_Item11.png" alt="Grabkreuze 2">
+              <p>Grabkreuze 2</p>
+            </a>
+            <a class="catalog-card" href="https://dl.dropbox.com/s/7eks9trkqwn0yqz/12_Grabkreuze%203.pdf" target="_blank">
+              <img src="Catalog_Item12.png" alt="Grabkreuze 3">
+              <p>Grabkreuze 3</p>
+            </a>
+            <a class="catalog-card" href="https://dl.dropbox.com/s/muwl9v510wdlwo0/13_%20Bronze_Aluminiumkreuze.pdf" target="_blank">
+              <img src="Catalog_Item13.png" alt="Bronze und Aluminiumkreuze">
+              <p>Bronze- und Aluminiumkreuze</p>
+            </a>
+            <a class="catalog-card" href="https://dl.dropbox.com/s/jjs9c92xpq5x50l/14_Garnituren.pdf" target="_blank">
+              <img src="Catalog_Item14.png" alt="Garnituren">
+              <p>Garnituren</p>
+            </a>
+            <a class="catalog-card" href="https://dl.dropbox.com/s/0zs31c7sn0govul/15_Madonnen.pdf" target="_blank">
+              <img src="Catalog_Item15.png" alt="Madonnen">
+              <p>Madonnen</p>
+            </a>
+            <a class="catalog-card" href="https://dl.dropbox.com/s/wstkyc47w4fatz8/16_Grabsymbole.pdf" target="_blank">
+              <img src="Catalog_Item16.png" alt="Grabsymbole">
+              <p>Grabsymbole</p>
+            </a>
+            <a class="catalog-card" href="https://dl.dropbox.com/s/hxg1lq2cbqsb3lo/17_Urnengestaltung.pdf" target="_blank">
+              <img src="Catalog_Item17.png" alt="Urnengestaltung">
+              <p>Urnengestaltung</p>
+            </a>
+            <a class="catalog-card" href="https://dl.dropbox.com/s/si0lm675z25ir8f/18_Christusstatuen.pdf" target="_blank">
+              <img src="Catalog_Item18.png" alt="Christusstatuen">
+              <p>Christusstatuen</p>
+            </a>
+          </div>
+        </section>
+      </section>
+      <aside class="aside-right">
+        <div class="info-card">
+          <h2>Service-Telefon</h2>
+          <p>0676 / 31 01 989</p>
+          <p><a href="mailto:info@lutz-stein.at">info@lutz-stein.at</a></p>
+        </div>
+      </aside>
+    </main>
+    <footer class="footer">
+      <ul class="footer-links">
+        <li><a href="index.php?id=15">Links</a></li>
+        <li><a href="index.php?id=14">Impressum</a></li>
+      </ul>
+    </footer>
+  </div>
+</body>
+</html>
